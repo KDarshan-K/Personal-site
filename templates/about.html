@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block title %}About — {{ site.title }}{% endblock %}
+{% block content %}
+<article class="article">
+  <p class="eyebrow">A LITTLE CONTEXT</p>
+  <h1>About<span class="period">.</span></h1>
+  <div class="prose">{{ about.html | safe }}</div>
+</article>
+{% endblock %}

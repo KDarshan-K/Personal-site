@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block title %}{{ item.title }} — {{ site.title }}{% endblock %}
+{% block content %}
+<article class="article">
+  <a class="back-link" href="/{{ section }}/">← Back to {{ section }}</a>
+  <p class="eyebrow">{{ section|upper }}{% if item.date %} · {{ item.date }}{% endif %}</p>
+  <h1>{{ item.title }}<span class="period">.</span></h1>
+  {% if item.summary %}<p class="lead">{{ item.summary }}</p>{% endif %}
+  {% if item.status %}<p class="status">{{ item.status }}</p>{% endif %}
+  <div class="prose">{{ item.html | safe }}</div>
+</article>
+{% endblock %}

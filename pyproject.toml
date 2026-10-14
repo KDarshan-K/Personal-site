@@ -1,0 +1,17 @@
+[project]
+name = "darshan-static"
+version = "0.1.0"
+description = "A lightweight Python 3.12 static-site generator for Darshan Kagadal's portfolio"
+requires-python = ">=3.12"
+dependencies = [
+  "Jinja2>=3.1.4,<4",
+  "Markdown>=3.6,<4",
+  "PyYAML>=6.0.1,<7",
+]
+
+[project.scripts]
+darshan-site = "sitegen.cli:main"
+
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"

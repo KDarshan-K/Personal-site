@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block title %}{{ section|title }} — {{ site.title }}{% endblock %}
+{% block content %}
+<section class="page-intro">
+  <p class="eyebrow">{{ site.title }} / ARCHIVE</p>
+  <h1>{{ section|title }}<span class="period">.</span></h1>
+  <p class="lead">{% if section == "projects" %}Systems I've built, experiments I've run, and what I learned.{% elif section == "notes" %}Notes on software, systems, and ideas worth keeping.{% else %}Papers, research explorations and technical findings.{% endif %}</p>
+</section>
+<section class="content-section">
+  {% for item in items %}
+  <article class="list-entry">
+    <div><h2><a href="/{{ section }}/{{ item.slug }}/">{{ item.title }}</a></h2><p>{{ item.summary }}</p>{% if item.status %}<span class="status">{{ item.status }}</span>{% endif %}</div>
+    <span class="entry-date">{{ item.date }}</span>
+  </article>
+  {% else %}
+  <p class="muted">Nothing here yet. Add a Markdown file in <code>content/{{ section }}/</code>.</p>
+  {% endfor %}
+</section>
+{% endblock %}

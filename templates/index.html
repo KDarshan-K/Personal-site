@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% block title %}{{ site.title }} — About{% endblock %}
+{% block content %}
+<section class="intro">
+  <p class="eyebrow">ABOUT · {{ site.location }}</p>
+  <h1>DARSHAN<br>KAGADAL<span class="period">.</span></h1>
+  <p class="lead">I'm a Computer Science undergraduate interested in backend engineering, system design, databases, and AI systems.</p>
+  <p class="body-copy">I like building projects to understand how things work under the hood, exploring trade-offs, and writing down what I learn along the way.</p>
+  <div class="social-links">
+    <a href="{{ site.links.github }}">GitHub ↗</a>
+    <a href="{{ site.links.linkedin }}">LinkedIn ↗</a>
+    <a href="mailto:{{ site.email }}">Email ↗</a>
+  </div>
+</section>
+
+<section class="content-section">
+  <div class="section-heading"><h2>What I'm interested in</h2><span>01</span></div>
+  <p>Backend systems · System design · Databases · Distributed systems · AI engineering</p>
+</section>
+
+<section class="content-section">
+  <div class="section-heading"><h2>Things I've built</h2><a href="/projects/">All projects ↗</a></div>
+  {% for item in collections.projects[:3] %}
+  <article class="list-entry">
+    <div><h3><a href="/projects/{{ item.slug }}/">{{ item.title }}</a></h3><p>{{ item.summary }}</p></div>
+    <span class="entry-date">{{ item.date }}</span>
+  </article>
+  {% else %}
+  <p class="muted">Project write-ups will appear here as you add Markdown files to <code>content/projects/</code>.</p>
+  {% endfor %}
+</section>
+
+<section class="content-section">
+  <div class="section-heading"><h2>Notes from my learning</h2><a href="/notes/">All notes ↗</a></div>
+  {% for item in collections.notes[:3] %}
+  <article class="list-entry">
+    <div><h3><a href="/notes/{{ item.slug }}/">{{ item.title }}</a></h3><p>{{ item.summary }}</p></div>
+    <span class="entry-date">{{ item.date }}</span>
+  </article>
+  {% else %}<p class="muted">Notes on engineering and things learned while building.</p>{% endfor %}
+</section>
+
+<section class="content-section">
+  <div class="section-heading"><h2>Research & publications</h2><a href="/research/">Research archive ↗</a></div>
+  {% for item in collections.research[:2] %}
+  <article class="list-entry">
+    <div><h3><a href="/research/{{ item.slug }}/">{{ item.title }}</a></h3><p>{{ item.summary }}</p><span class="status">{{ item.status or "Research" }}</span></div>
+    <span class="entry-date">{{ item.date }}</span>
+  </article>
+  {% else %}<p class="muted">Papers, research explorations and technical work will be listed here with their status clearly identified.</p>{% endfor %}
+</section>
+
+<section class="content-section">
+  <div class="section-heading"><h2>A little more about me</h2><a href="/about/">Full about page ↗</a></div>
+  <div class="prose">{{ about.html | safe }}</div>
+</section>
+{% endblock %}
