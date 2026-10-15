@@ -1,3 +1,4 @@
+
 {% extends "base.html" %}
 {% block title %}{{ site.title }} — About{% endblock %}
 {% block content %}
@@ -19,10 +20,16 @@
 </section>
 
 <section class="content-section">
-  <div class="section-heading"><h2>Things I've built</h2><a href="/projects/">All projects ↗</a></div>
+  <div class="section-heading">
+    <h2>Things I've built</h2>
+    <a href="{{ site.base_url }}/projects/">All projects ↗</a>
+  </div>
   {% for item in collections.projects[:3] %}
   <article class="list-entry">
-    <div><h3><a href="/projects/{{ item.slug }}/">{{ item.title }}</a></h3><p>{{ item.summary }}</p></div>
+    <div>
+      <h3><a href="{{ site.base_url }}/projects/{{ item.slug }}/">{{ item.title }}</a></h3>
+      <p>{{ item.summary }}</p>
+    </div>
     <span class="entry-date">{{ item.date }}</span>
   </article>
   {% else %}
@@ -31,27 +38,47 @@
 </section>
 
 <section class="content-section">
-  <div class="section-heading"><h2>Notes from my learning</h2><a href="/notes/">All notes ↗</a></div>
+  <div class="section-heading">
+    <h2>Notes from my learning</h2>
+    <a href="{{ site.base_url }}/notes/">All notes ↗</a>
+  </div>
   {% for item in collections.notes[:3] %}
   <article class="list-entry">
-    <div><h3><a href="/notes/{{ item.slug }}/">{{ item.title }}</a></h3><p>{{ item.summary }}</p></div>
+    <div>
+      <h3><a href="{{ site.base_url }}/notes/{{ item.slug }}/">{{ item.title }}</a></h3>
+      <p>{{ item.summary }}</p>
+    </div>
     <span class="entry-date">{{ item.date }}</span>
   </article>
-  {% else %}<p class="muted">Notes on engineering and things learned while building.</p>{% endfor %}
+  {% else %}
+  <p class="muted">Notes on engineering and things learned while building.</p>
+  {% endfor %}
 </section>
 
 <section class="content-section">
-  <div class="section-heading"><h2>Research & publications</h2><a href="/research/">Research archive ↗</a></div>
+  <div class="section-heading">
+    <h2>Research & publications</h2>
+    <a href="{{ site.base_url }}/research/">Research archive ↗</a>
+  </div>
   {% for item in collections.research[:2] %}
   <article class="list-entry">
-    <div><h3><a href="/research/{{ item.slug }}/">{{ item.title }}</a></h3><p>{{ item.summary }}</p><span class="status">{{ item.status or "Research" }}</span></div>
+    <div>
+      <h3><a href="{{ site.base_url }}/research/{{ item.slug }}/">{{ item.title }}</a></h3>
+      <p>{{ item.summary }}</p>
+      <span class="status">{{ item.status or "Research" }}</span>
+    </div>
     <span class="entry-date">{{ item.date }}</span>
   </article>
-  {% else %}<p class="muted">Papers, research explorations and technical work will be listed here with their status clearly identified.</p>{% endfor %}
+  {% else %}
+  <p class="muted">Papers, research explorations and technical work will be listed here with their status clearly identified.</p>
+  {% endfor %}
 </section>
 
 <section class="content-section">
-  <div class="section-heading"><h2>A little more about me</h2><a href="/about/">Full about page ↗</a></div>
+  <div class="section-heading">
+    <h2>A little more about me</h2>
+    <a href="{{ site.base_url }}/about/">Full about page ↗</a>
+  </div>
   <div class="prose">{{ about.html | safe }}</div>
 </section>
 {% endblock %}
