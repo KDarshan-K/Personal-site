@@ -9,7 +9,7 @@
 <section class="content-section">
   {% for item in items %}
   <article class="list-entry">
-    <div><h2><a href="/{{ section }}/{{ item.slug }}/">{{ item.title }}</a></h2><p>{{ item.summary }}</p>{% if item.status %}<span class="status">{{ item.status }}</span>{% endif %}</div>
+    <div><h2><a href="{{ site.base_url }}/{{ section }}/{{ item.slug }}/">{{ item.title }}</a></h2><p>{{ item.summary }}</p>{% if item.status %}<span class="status">{{ item.status }}</span>{% endif %}</div>
     <span class="entry-date">{{ item.date }}</span>
   </article>
   {% else %}
