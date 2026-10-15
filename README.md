@@ -1,6 +1,6 @@
-# Darshan Kagadal — Static Portfolio
+# Darshan Kagadal — Portfolio
 
-A small, content-first static-site generator designed for Python 3.12+. Inspired by the philosophy of simple engineering/publishing websites; this is an independent implementation, not a copy of Reweb.
+A small, content-first static-site generator designed for Python 3.12+. Inspired by the philosophy of simple engineering/publishing websites.
 
 ## Requirements
 - Python 3.12+
