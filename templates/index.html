@@ -4,13 +4,12 @@
 {% block content %}
 <section class="intro">
   <p class="eyebrow">ABOUT · {{ site.location }}</p>
-  <h1>DARSHAN<br>KAGADAL<span class="period">.</span></h1>
+  <h1>DARSHAN KAGADAL<span class="period">.</span></h1>
   <p class="lead">I'm a Computer Science undergraduate interested in backend engineering, system design, databases, and AI systems.</p>
   <p class="body-copy">I like building projects to understand how things work under the hood, exploring trade-offs, and writing down what I learn along the way.</p>
   <div class="social-links">
     <a href="{{ site.links.github }}">GitHub ↗</a>
     <a href="{{ site.links.linkedin }}">LinkedIn ↗</a>
-    <a href="mailto:{{ site.email }}">Email ↗</a>
   </div>
 </section>
 
@@ -74,11 +73,22 @@
   {% endfor %}
 </section>
 
-<section class="content-section">
+ <section class="content-section">
   <div class="section-heading">
-    <h2>A little more about me</h2>
-    <a href="{{ site.base_url }}/about/">Full about page ↗</a>
+    <h2>About me</h2>
+    <span>05</span>
   </div>
-  <div class="prose">{{ about.html | safe }}</div>
+  <div class="prose">
+    <p>I'm a final year Computer Science student @ Dayananda Sagar Institutions.</p>
+
+    <p>I enjoy building projects to understand how things work under the hood, exploring engineering trade-offs, and documenting what I learn along the way.</p>
+
+    <p>Beyond Projects,I read research papers.</p>
+  </div>
+  <div class="social-links">
+    <a href="{{ site.links.github }}">GitHub ↗</a>
+    <a href="{{ site.links.linkedin }}">LinkedIn ↗</a>
+    <a href="mailto:{{ site.email }}">Email ↗</a>
+  </div>
 </section>
 {% endblock %}
