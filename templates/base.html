@@ -1,50 +1,64 @@
+
 <!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="{{ site.description }}">
+  <meta name="description" content="Software engineering, systems, and things I'm learning.">
   <title>{% block title %}{{ site.title }}{% endblock %}</title>
+
   <script>
     (() => {
       try {
         const savedTheme = localStorage.getItem("portfolio-theme");
-        const systemPrefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-        document.documentElement.dataset.theme = savedTheme || (systemPrefersDark ? "dark" : "light");
+        const systemPrefersDark =
+          window.matchMedia("(prefers-color-scheme: dark)").matches;
+        document.documentElement.dataset.theme =
+          savedTheme || (systemPrefersDark ? "dark" : "light");
       } catch (_) {
         document.documentElement.dataset.theme = "light";
       }
     })();
   </script>
-  <link rel="stylesheet" href="/assets/css/site.css">
+
+  <link rel="stylesheet" href="{{ site.base_url }}/assets/css/site.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
   <div class="site-shell">
     <header class="site-header">
-      <a class="wordmark" href="/" aria-label="{{ site.title }} home">DK<span>.</span></a>
+      <a class="wordmark" href="{{ site.base_url }}/" aria-label="{{ site.title }} home">DK<span>.</span></a>
+
       <div class="header-tools">
         <nav aria-label="Main navigation">
-          <a href="/projects/">Projects</a>
-          <a href="/notes/">Notes</a>
-          <a href="/research/">Research</a>
-          <a href="/about/">About</a>
-          <a href="/contact/">Contact</a>
+          <a href="{{ site.base_url }}/projects/">Projects</a>
+          <a href="{{ site.base_url }}/notes/">Notes</a>
+          <a href="{{ site.base_url }}/research/">Research</a>
+          <a href="{{ site.base_url }}/about/">About</a>
+          <a href="{{ site.base_url }}/contact/">Contact</a>
         </nav>
-        <button class="theme-toggle" type="button" id="theme-toggle" aria-label="Switch to dark mode" aria-pressed="false">
+
+        <button class="theme-toggle" type="button"
+          id="theme-toggle" aria-label="Switch theme" aria-pressed="false">
           <span class="theme-toggle-icon" aria-hidden="true">☾</span>
           <span class="theme-toggle-label">Dark</span>
         </button>
       </div>
     </header>
-    <main>{% block content %}{% endblock %}</main>
+
+    <main>
+      {% block content %}{% endblock %}
+    </main>
+
     <footer class="site-footer">
-      <span>© {{ site.title }}</span>
+      <span>© Darshan Kagadal</span>
       <span>Built with care, not a framework-sized JavaScript bundle.</span>
     </footer>
   </div>
-  <script src="/assets/js/theme.js" defer></script>
+
+  <script src="{{ site.base_url }}/assets/js/theme.js" defer></script>
 </body>
 </html>
