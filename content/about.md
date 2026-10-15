@@ -1,10 +1,10 @@
 ---
 title: About Darshan
 ---
-I'm a Computer Science and Engineering undergraduate at Dayananda Sagar Academy of Technology and Management, graduating in 2027.
+I'm a Final year Computer Science student from Dayananda Sagar Institutions.
 
-My interests include backend development, object-oriented programming, system design, databases, and applied AI. I enjoy learning by building, testing ideas, and understanding the trade-offs behind a system.
+My interests include backend development, system design, databases, and Generative AI & Agentic AI. I enjoy learning by building, testing ideas, and understanding the trade-offs behind a system.
 
-Outside project work, I've participated in quiz competitions and hackathons. At IEEE HackaPhasia 2025, my team, TwoOne, placed fourth runner-up among 125 teams with FarmVista.
+Outside project work, I read and write research papers. 
 
 This site is my working notebook: projects I've built, ideas I'm exploring, and notes I want to be able to find again.
