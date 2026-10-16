@@ -577,3 +577,63 @@ html[data-theme="dark"] {
     animation-iteration-count: 1 !important;
   }
 }
+
+
+/* Hero heading */
+.intro h1.hero-title {
+  line-height: 1.05;
+  letter-spacing: -0.045em;
+}
+
+.intro h1.hero-title .first-name {
+  font-weight: 600;
+}
+
+.intro h1.hero-title .last-name {
+  color: #8b8cf6 !important;
+  font-style: italic;
+  font-weight: 700;
+}
+
+.intro h1.hero-title .period {
+  color: #8b8cf6;
+}
+
+
+/* Force the hero tagline styling */
+.intro h2.hero-tagline {
+  display: block;
+  margin: 32px 0 24px;
+  font-size: clamp(32px, 5.5vw, 52px);
+  font-weight: 700;
+  line-height: 1.12;
+  letter-spacing: -0.05em;
+  color: var(--slate) !important;
+}
+
+.intro h2.hero-tagline .tagline-accent {
+  color: #6C63C7 !important;
+  font-style: italic;
+  font-weight: 700;
+}
+
+:root[data-theme="dark"] .intro h2.hero-tagline .tagline-accent {
+  color: #B5AEFF !important;
+}
+
+
+.hero-tagline {
+  font-size: clamp(32px, 5.5vw, 52px);
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+.tagline-main {
+  color: var(--slate);
+  font-style: normal;
+}
+
+.tagline-accent {
+  color: #6C63C7;
+  font-style: normal;
+}
