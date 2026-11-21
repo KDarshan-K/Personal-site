@@ -44,7 +44,11 @@ def load_collection(root: Path, name: str) -> list[dict[str, Any]]:
     if not folder.exists():
         return []
     items = [parse_markdown(p) for p in folder.glob("*.md")]
-    items.sort(key=lambda item: str(item.get("date", "")), reverse=True)
+    def sort_key(item: dict[str, Any]):
+        order = int(item.get("order", 999))
+        date = str(item.get("date", ""))
+        return (order, -int(date) if date.isdigit() else 0, date)
+    items.sort(key=sort_key)
     return items
 
 def render(env: Environment, template: str, context: dict[str, Any], output_path: Path) -> None:
